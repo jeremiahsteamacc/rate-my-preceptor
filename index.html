@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Rate My Preceptor&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preceptor-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.review-form, .add-preceptor-form {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input, textarea, select {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #0077cc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #005fa3;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Rate My Preceptor&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Search --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" id="searchBox" placeholder="Search for a preceptor..." onkeyup="searchPreceptors()"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="toggleAddPreceptorForm()"&gt;Add New Preceptor&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Add Preceptor Form --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="addPreceptorSection" style="display:none;" class="add-preceptor-form"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Add a New Preceptor&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;form id="addPreceptorForm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="newName"&gt;Preceptor Name:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="newName" required&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="newLocation"&gt;Location (School/Facility):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="newLocation" required&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="recommend"&gt;Would you recommend this preceptor?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="recommend" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value=""&gt;Select&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="Yes"&gt;Yes&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="No"&gt;No&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="hours"&gt;Hours per week:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="number" id="hours" required min="1"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="dressCode"&gt;Dress code:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="dressCode" required&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button type="submit"&gt;Add Preceptor&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- List of Preceptors --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="preceptorList"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Review Form --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="reviewSection" style="display:none;" class="review-form"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Leave a Review for &lt;span id="preceptorName"&gt;&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;form id="reviewForm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="rating"&gt;Rating (1–5):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;select id="rating" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value=""&gt;Select rating&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="5"&gt;5 - Excellent&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="4"&gt;4 - Good&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="3"&gt;3 - Average&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="2"&gt;2 - Poor&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="1"&gt;1 - Terrible&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label for="comments"&gt;Comments:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;textarea id="comments" rows="5" required&gt;&lt;/textarea&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button type="submit"&gt;Submit Review&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initialize preceptors</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let preceptors = JSON.parse(localStorage.getItem('preceptors')) || [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function savePreceptors() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('preceptors', JSON.stringify(preceptors));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderPreceptors() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const list = document.getElementById('preceptorList');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>preceptors.forEach((preceptor, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const card = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.className = 'preceptor-card';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;${preceptor.name}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Location:&lt;/strong&gt; ${preceptor.location}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Recommend?&lt;/strong&gt; ${preceptor.recommend}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Hours/week:&lt;/strong&gt; ${preceptor.hours}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;Dress Code:&lt;/strong&gt; ${preceptor.dressCode}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="showReviewForm(${index})"&gt;Leave a Review&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4&gt;Reviews:&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${preceptor.reviews.map(r =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p&gt;⭐ ${r.rating} - ${r.comments}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`).join('') || '&lt;p&gt;No reviews yet.&lt;/p&gt;'}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>list.appendChild(card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toggleAddPreceptorForm() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const section = document.getElementById('addPreceptorSection');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>section.style.display = section.style.display === 'none' ? 'block' : 'none';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('addPreceptorForm').addEventListener('submit', function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const newPreceptor = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>name: document.getElementById('newName').value,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>location: document.getElementById('newLocation').value,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>recommend: document.getElementById('recommend').value,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>hours: document.getElementById('hours').value,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>dressCode: document.getElementById('dressCode').value,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>reviews: []</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>preceptors.push(newPreceptor);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>savePreceptors();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderPreceptors();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('addPreceptorForm').reset();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('addPreceptorSection').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentPreceptorIndex = null;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showReviewForm(index) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentPreceptorIndex = index;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('preceptorName').innerText = preceptors[index].name;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('reviewSection').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.scrollTo(0, document.body.scrollHeight);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('reviewForm').addEventListener('submit', function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const review = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>rating: document.getElementById('rating').value,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>comments: document.getElementById('comments').value</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>preceptors[currentPreceptorIndex].reviews.push(review);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>savePreceptors();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderPreceptors();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('reviewForm').reset();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('reviewSection').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function searchPreceptors() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const input = document.getElementById('searchBox').value.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const cards = document.getElementsByClassName('preceptor-card');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let card of cards) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const name = card.getElementsByTagName('h3')[0].innerText.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (name.includes(input)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>card.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>card.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initial render</p>
+<p class="p1"><span class="Apple-converted-space">        </span>renderPreceptors();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
